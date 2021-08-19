@@ -1,12 +1,15 @@
+exports.min = function min(array) {
+    return arguments.length < 1 || array.length < 1 ? 0 : Math.min(...array);
+};
 
-exports.min = function min (array) {
-  return 0;
-}
+exports.max = function max(array) {
+    return arguments.length < 1 || array.length < 1 ? 0 : Math.max(...array);
+};
 
-exports.max = function max (array) {
-  return 0;
-}
+exports.avg = function avg(array) {
+    const reducer = (acc, it) => acc + it;
 
-exports.avg = function avg (array) {
-  return 0;
-}
+    return arguments.length < 1 || array.length < 1
+        ? 0
+        : array.reduce(reducer, 0) / array.length;
+};
